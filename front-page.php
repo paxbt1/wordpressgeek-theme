@@ -41,7 +41,7 @@ $posts = get_posts($args);
                                     </h1>
                                     <div class="entry-meta meta-1 font-small text-white mt-10 pr-5 pl-5">
                                         
-                                        <span class="hit-count has-dot"><?= gt_get_post_view(); ?></span>
+                                        <span class="hit-count has-dot"><?php echo gt_get_post_view(); ?></span>
                                     </div>
                                 </div>
                             </div>
@@ -81,7 +81,7 @@ $posts = get_posts($args);
                                     <h5 class="post-title mb-15 text-limit-2-row"><?php echo the_title();?></h5>
                                     <div class="entry-meta meta-1 float-left font-x-small text-uppercase">
                                         <span class="post-on text-white"><?php echo get_post_time(get_option( 'date_format' ) , false, $post, true ); ?></span>
-                                        <span class="hit-count has-dot text-white">714 views</span>
+                                        <span class="hit-count has-dot text-white"><?php echo gt_get_post_view(); ?></span>
                                     </div>
                                 </div>
                             </div>
@@ -102,7 +102,7 @@ $posts = get_posts($args);
                     <div class="col-lg-8">
                         <div class="post-module-2">
                             <div class="widget-header-1 position-relative mb-30  wow fadeInUp animated">
-                                <h5 class="mt-5 mb-30">Travel</h5>
+                                <h5 class="mt-5 mb-30">توسعه دهنده</h5>
                             </div>
                             <div class="loop-list loop-list-style-1">
                                 <div class="row">
@@ -127,7 +127,7 @@ $posts = get_posts($args);
                                                 <div class="post-thumb thumb-overlay img-hover-slide position-relative"
                                                     style="background-image: url(storage/news/10.jpg)">
                                                     <a class="img-link"
-                                                        href="10-reasons-to-start-your-own-profitable-website.html"></a>
+                                                        href="<?php echo post_permalink() ?>"></a>
                                                     <ul class="social-share">
                                                         <li><a href="#"><i class="elegant-icon social_share"></i></a>
                                                         </li>
@@ -148,19 +148,18 @@ $posts = get_posts($args);
                                                 <div class="post-content p-30">
                                                     <div class="entry-meta meta-0 font-small mb-10">
                                                         <a href="food.html"><span
-                                                                class="post-cat text-success">Food</span></a>
+                                                                class="post-cat text-success"><?php echo get_the_category($post->ID)[0]->name; ?></span></a>
                                                     </div>
                                                     <div class="d-flex post-card-content">
                                                         <h5 class="post-title mb-20 font-weight-900">
                                                             <a
-                                                                href="10-reasons-to-start-your-own-profitable-website.html">10
-                                                                Reasons To Start Your Own, Profitable Website!</a>
+                                                                href="<?php echo post_permalink() ?>"><?php echo the_title();?></a>
                                                         </h5>
                                                         <div
                                                             class="entry-meta meta-1 float-left font-x-small text-uppercase">
-                                                            <span class="post-on">Aug 08, 2021</span>
-                                                            <span class="time-reading has-dot">12 mins read</span>
-                                                            <span class="post-by has-dot">324 views</span>
+                                                            <span class="post-on"><?php echo get_post_time(get_option( 'date_format' ) , false, $post, true ); ?></span>
+                                                            <!-- <span class="time-reading has-dot">12 mins read</span> -->
+                                                            <span class="post-by has-dot"><?php echo gt_get_post_view(); ?></span>
                                                         </div>
                                                     </div>
                                                 </div>
