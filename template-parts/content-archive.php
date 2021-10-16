@@ -2,8 +2,8 @@
     <div class="post-card-1 border-radius-10 hover-up">
         <div class="post-card-1 border-radius-10 hover-up">
             <div class="post-thumb thumb-overlay img-hover-slide position-relative"
-                style="background-image: url(storage/news/1.jpg)">
-                <a class="img-link" href="the-top-2020-handbag-trends-to-know.html"></a>
+                style="background-image: url(<?php  echo the_post_thumbnail_url($post->ID,'thumbnail'); ?>)">
+                <a class="img-link" href="<?php the_permalink(); ?>"></a>
                 <ul class="social-share">
                     <li><a href="#"><i class="elegant-icon social_share"></i></a></li>
                     <li><a class="fb"
@@ -21,16 +21,16 @@
             </div>
             <div class="post-content p-30">
                 <div class="entry-meta meta-0 font-small mb-10">
-                    <a href="guides.html"><span class="post-cat text-success">Guides</span></a>
+                    <a href="<?php echo get_term_link( get_the_category($post->ID)[0]->name , 'category' ) ?>"><span class="post-cat text-success"><?php echo get_the_category($post->ID)[0]->name; ?></span></a>
                 </div>
                 <div class="d-flex post-card-content">
                     <h5 class="post-title mb-20 font-weight-900">
-                        <a href="the-top-2020-handbag-trends-to-know.html">The Top 2020 Handbag Trends to Know</a>
+                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                     </h5>
                     <div class="entry-meta meta-1 float-left font-x-small text-uppercase">
-                        <span class="post-on">Aug 08, 2021</span>
-                        <span class="time-reading has-dot">12 mins read</span>
-                        <span class="post-by has-dot">714 views</span>
+                        <span class="post-on"><?php the_date(); ?></span>
+                        <!-- <span class="time-reading has-dot">12 mins read</span> -->
+                        <span class="post-by has-dot"><?php echo gt_get_post_view(); ?></span>
                     </div>
                 </div>
             </div>

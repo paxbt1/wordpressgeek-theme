@@ -33,7 +33,8 @@ if(have_posts()){
                     style="visibility: visible; animation-name: fadeInUp;">
                     <nav>
                         <ul class="pagination">
-                            <?php echo get_the_posts_pagination();?>
+                            
+                           <?php kriesi_pagination();?>
                             <!-- <li class="page-item disabled" aria-disabled="true" aria-label="« Previous">
                                 <span class="page-link" aria-hidden="true">‹</span>
                             </li>

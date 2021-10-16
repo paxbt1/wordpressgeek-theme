@@ -147,7 +147,7 @@ $posts = get_posts($args);
                                                 </div>
                                                 <div class="post-content p-30">
                                                     <div class="entry-meta meta-0 font-small mb-10">
-                                                        <a href="food.html"><span
+                                                        <a href="<?php echo get_term_link( get_the_category($post->ID)[0]->name , 'category' ) ?>"><span
                                                                 class="post-cat text-success"><?php echo get_the_category($post->ID)[0]->name; ?></span></a>
                                                     </div>
                                                     <div class="d-flex post-card-content">
