@@ -33,8 +33,8 @@ if(have_posts()){
                     style="visibility: visible; animation-name: fadeInUp;">
                     <nav>
                         <ul class="pagination">
-                            
-                           <?php kriesi_pagination();?>
+
+                            <?php kriesi_pagination();?>
                             <!-- <li class="page-item disabled" aria-disabled="true" aria-label="« Previous">
                                 <span class="page-link" aria-hidden="true">‹</span>
                             </li>
@@ -48,8 +48,10 @@ if(have_posts()){
                 </div>
 
             </div>
-            <div class="col-lg-4 primary-sidebar sticky-sidebar" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
-                <div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: static; transform: none; top: 0px; left: 1156.5px;">
+            <div class="col-lg-4 primary-sidebar sticky-sidebar"
+                style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
+                <div class="theiaStickySidebar"
+                    style="padding-top: 0px; padding-bottom: 1px; position: static; transform: none; top: 0px; left: 1156.5px;">
                     <div class="sidebar-widget widget-about mb-50 pt-30 pr-30 pb-30 pl-30 bg-white border-radius-5 has-border  wow fadeInUp  animated"
                         style="visibility: visible; animation-name: fadeInUp;">
                         <img class="about-author-img mb-25" src="storage/general/author.jpg" alt="Hello, I'm Steven">
@@ -69,9 +71,18 @@ if(have_posts()){
                             </li>
                         </ul>
                     </div>
+                    <div class="post-block-list post-module-1">
+                        <ul class="list-post">
+                            <?php
+                                        dynamic_sidebar( 'sidebar-1' );
+                                    ?>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
-    </div>
-    </div>
 </main>
 
 <?php

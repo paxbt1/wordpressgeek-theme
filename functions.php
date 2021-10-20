@@ -7,7 +7,7 @@ add_theme_support('post-thumbnails');
 add_image_size( 'custopm-thumbnail', 75, 75 );
 // enqueue styles
 add_action('wp_enqueue_scripts', 'wpgeek_register_styles');
-
+include_once(get_template_directory().'/classes/admin.php');
 function wpgeek_register_styles(){
     $version=wp_get_theme()->get('version');
     wp_enqueue_style( 'style', get_template_directory_uri()."/assets/css/style.css", array(),'1.9.0','all');
@@ -54,35 +54,18 @@ add_theme_support('menus');
 
 
 function gt_get_post_view() {
-
-
     $count = get_post_meta( get_the_ID(), 'post_views_count', true );
-
-
-    return "$count views";
-
-
+    // return "$count".esc_html_e( "views" ,  'wordpressgeek-net' );
+    return esc_html_e( "بازدید شده" ,  'wordpressgeek-net' ). "$count";
 }
 
 
 function gt_set_post_view() {
-
-
     $key = 'post_views_count';
-
-
     $post_id = get_the_ID();
-
-
     $count = (int) get_post_meta( $post_id, $key, true );
-
-
     $count++;
-
-
     update_post_meta( $post_id, $key, $count );
-
-
 }
 
 
@@ -99,25 +82,14 @@ function gt_posts_column_views( $columns ) {
 
 
 function gt_posts_custom_column_views( $column ) {
-
-
     if ( $column === 'post_views') {
-
-
         echo gt_get_post_view();
-
-
     }
-
-
 }
 
 
 add_filter( 'manage_posts_columns', 'gt_posts_column_views' );
-
-
 add_action( 'manage_posts_custom_column', 'gt_posts_custom_column_views' );
-
 
 
 
@@ -164,3 +136,138 @@ function kriesi_pagination($pages = '', $range = 2)
          echo "</div>\n";
      }
 }
+
+function wpgeek_widget_areas(){
+    register_sidebar(
+        array(
+            'before_title'=>'<h6 class="post-title mb-15 text-limit-2-row font-medium">',
+            'after_title'=>'</h6>',
+            'before_widget'=>'<li class="mb-30 wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                                <div class="d-flex bg-white has-border p-25 hover-up transition-normal border-radius-5">
+                                    <div class="post-content media-body">',
+            'after_widget'=>'  </div>
+                                </div>
+                            </li>',
+            'name'=>'Sidebar Area',
+            'id'=>'sidebar-1',
+            'description'=>'Sidebar Area Widget'
+        ));
+        register_sidebar(
+            array(
+                'before_title'=>'<div class="widget-header-2 position-relative mb-30">
+                            <h5 class="mt-5 mb-30">',
+                'after_title'=>'</h5></div>',
+                'before_widget'=>'<div class="textwidget">',
+                'after_widget'=>'</div>',
+                'name'=>'Footer col 1',
+                'id'=>'footer-1',
+                'description'=>'Fotter Col One Area Widget'
+            )
+        );
+        register_sidebar(
+            array(
+                'before_title'=>'<div class="widget-header-2 position-relative mb-30">
+                            <h5 class="mt-5 mb-30">',
+                'after_title'=>'</h5></div>',
+                'before_widget'=>'<div class="textwidget">',
+                'after_widget'=>'</div>',
+                'name'=>'Footer col 2',
+                'id'=>'footer-2',
+                'description'=>'Fotter Col One Area Widget'
+            )
+        );
+
+        register_sidebar(
+            array(
+                'before_title'=>'<div class="widget-header-2 position-relative mb-30">
+                            <h5 class="mt-5 mb-30">',
+                'after_title'=>'</h5></div>',
+                'before_widget'=>'<div class="textwidget">',
+                'after_widget'=>'</div>',
+                'name'=>'Footer col 3',
+                'id'=>'footer-3',
+                'description'=>'Fotter Col One Area Widget'
+                )
+        );
+
+        register_sidebar(
+            array(
+                'before_title'=>'<div class="widget-header-2 position-relative mb-30">
+                            <h5 class="mt-5 mb-30">',
+                'after_title'=>'</h5></div>',
+                'before_widget'=>'<div class="textwidget">',
+                'after_widget'=>'</div>',
+                'name'=>'Footer col 4',
+                'id'=>'footer-4',
+                'description'=>'Fotter Col One Area Widget'
+            )
+      );
+}
+
+add_action( 'widgets_init', 'wpgeek_widget_areas' );
+
+/*=============================================
+=            BREADCRUMBS			            =
+=============================================*/
+
+//  to include in functions.php
+function the_breadcrumb() {
+
+    $sep = ' > ';
+
+    if (!is_front_page()) {
+	
+	// Start the breadcrumb with a link to your homepage
+        echo '<div class="breadcrumbs">';
+        echo '<a href="';
+        echo get_option('home');
+        echo '">';
+        bloginfo('name');
+        echo '</a>' . $sep;
+	
+	// Check if the current page is a category, an archive or a single page. If so show the category or archive name.
+        if (is_category() || is_single() ){
+            the_category('title_li=');
+        } elseif (is_archive() || is_single()){
+            if ( is_day() ) {
+                printf( __( '%s', 'text_domain' ), get_the_date() );
+            } elseif ( is_month() ) {
+                printf( __( '%s', 'text_domain' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'text_domain' ) ) );
+            } elseif ( is_year() ) {
+                printf( __( '%s', 'text_domain' ), get_the_date( _x( 'Y', 'yearly archives date format', 'text_domain' ) ) );
+            } else {
+                _e( 'Blog Archives', 'text_domain' );
+            }
+        }
+	
+	// If the current page is a single post, show its title with the separator
+        if (is_single()) {
+            echo $sep;
+            the_title();
+   
+        }
+	
+	// If the current page is a static page, show its title.
+        if (is_page()) {
+            echo the_title();
+        }
+	
+	// if you have a static page assigned to be you posts list page. It will find the title of the static page and display it. i.e Home >> Blog
+        if (is_home()){
+            global $post;
+            $page_for_posts_id = get_option('page_for_posts');
+            if ( $page_for_posts_id ) { 
+               
+                $post = get_post($page_for_posts_id);
+                setup_postdata($post);
+                the_title();
+                rewind_posts();
+            }
+        }
+
+        echo '</div>';
+    }
+}
+/*
+* Credit: http://www.thatweblook.co.uk/blog/tutorials/tutorial-wordpress-breadcrumb-function/
+*/

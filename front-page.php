@@ -41,7 +41,7 @@ $posts = get_posts($args);
                                     </h1>
                                     <div class="entry-meta meta-1 font-small text-white mt-10 pr-5 pl-5">
                                         
-                                        <span class="hit-count has-dot"><?php echo gt_get_post_view(); ?></span>
+                                        <span class="float-right"><?php echo gt_get_post_view(); ?></span>
                                     </div>
                                 </div>
                             </div>
@@ -81,7 +81,7 @@ $posts = get_posts($args);
                                     <h5 class="post-title mb-15 text-limit-2-row"><?php echo the_title();?></h5>
                                     <div class="entry-meta meta-1 float-left font-x-small text-uppercase">
                                         <span class="post-on text-white"><?php echo get_post_time(get_option( 'date_format' ) , false, $post, true ); ?></span>
-                                        <span class="hit-count has-dot text-white"><?php echo gt_get_post_view(); ?></span>
+                                        <span class="hit-count float-right text-white"><?php echo gt_get_post_view(); ?></span>
                                     </div>
                                 </div>
                             </div>
@@ -158,8 +158,8 @@ $posts = get_posts($args);
                                                         <div
                                                             class="entry-meta meta-1 float-left font-x-small text-uppercase">
                                                             <span class="post-on"><?php echo get_post_time(get_option( 'date_format' ) , false, $post, true ); ?></span>
-                                                            <!-- <span class="time-reading has-dot">12 mins read</span> -->
-                                                            <span class="post-by has-dot"><?php echo gt_get_post_view(); ?></span>
+                                                            <!-- <span class="time-reading float-right">12 mins read</span> -->
+                                                            <span class="post-by float-right"><?php echo gt_get_post_view(); ?></span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -216,7 +216,7 @@ $posts = get_posts($args);
                                                 </h5>
                                                 <div class="entry-meta meta-1 float-left font-x-small text-uppercase">
                                                     <span class="post-on">Aug 08, 2021</span>
-                                                    <span class="time-reading has-dot">12 mins read</span>
+                                                    <span class="time-reading float-right">12 mins read</span>
                                                     <span class="post-by has-dot">714 views</span>
                                                 </div>
                                             </div>
@@ -320,194 +320,39 @@ $posts = get_posts($args);
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="widget-area">
-                            <div
-                                class="sidebar-widget widget-about mb-50 pt-30 pr-30 pb-30 pl-30 bg-white border-radius-5 has-border  wow fadeInUp animated">
-                                <img class="about-author-img mb-25" src="storage/general/author.jpg"
-                                    alt="Hello, I&#039;m Steven">
-                                <h5 class="mb-20">Hello, I&#039;m Steven</h5>
-                                <p class="font-medium text-muted">Hi, I’m Steven, a Florida native, who left my career
-                                    in corporate wealth management six years ago to embark on a summer of soul searching
-                                    that would change the course of my life forever.</p>
-                                <strong>Follow me: </strong>
-                                <ul class="header-social-network d-inline-block list-inline color-white mb-20">
-                                    <li class="list-inline-item"><a style="background: #3b5999"
-                                            href="https://facebook.com/" target="_blank" title="Facebook"><i
-                                                class="elegant-icon social_facebook"></i></a></li>
-                                    <li class="list-inline-item"><a style="background: #55ACF9"
-                                            href="https://twitter.com/" target="_blank" title="Twitter"><i
-                                                class="elegant-icon social_twitter"></i></a></li>
-                                    <li class="list-inline-item"><a style="background: #0a66c2"
-                                            href="https://linkedin.com/" target="_blank" title="Linkedin"><i
-                                                class="elegant-icon social_linkedin"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="sidebar-widget widget-latest-posts mb-50 wow fadeInUp animated">
-                                <div class="widget-header-1 position-relative mb-30">
-                                    <h5 class="mt-5 mb-30">Most popular</h5>
-                                </div>
-                                <div class="post-block-list post-module-1">
-                                    <ul class="list-post">
-                                        <li class="mb-30 wow fadeInUp animated">
-                                            <div
-                                                class="d-flex bg-white has-border p-25 hover-up transition-normal border-radius-5">
-                                                <div class="post-content media-body">
-                                                    <h6 class="post-title mb-15 text-limit-2-row font-medium"><a
-                                                            href="imagine-losing-20-pounds-in-14-days.html">Imagine
-                                                            Losing 20 Pounds In 14 Days!</a></h6>
-                                                    <div
-                                                        class="entry-meta meta-1 float-left font-x-small text-uppercase">
-                                                        <span class="post-on">Aug 08, 2021</span>
-                                                        <span class="post-by has-dot">2,486 views</span>
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="post-thumb post-thumb-80 d-flex ml-15 border-radius-5 img-hover-scale overflow-hidden">
-                                                    <a class="color-white"
-                                                        href="imagine-losing-20-pounds-in-14-days.html">
-                                                        <img src="storage/news/7-150x150.jpg"
-                                                            alt="Imagine Losing 20 Pounds In 14 Days!">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="mb-30 wow fadeInUp animated">
-                                            <div
-                                                class="d-flex bg-white has-border p-25 hover-up transition-normal border-radius-5">
-                                                <div class="post-content media-body">
-                                                    <h6 class="post-title mb-15 text-limit-2-row font-medium"><a
-                                                            href="4-expert-tips-on-how-to-choose-the-right-mens-wallet.html">4
-                                                            Expert Tips On How To Choose The Right Men’s Wallet</a></h6>
-                                                    <div
-                                                        class="entry-meta meta-1 float-left font-x-small text-uppercase">
-                                                        <span class="post-on">Aug 08, 2021</span>
-                                                        <span class="post-by has-dot">2,486 views</span>
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="post-thumb post-thumb-80 d-flex ml-15 border-radius-5 img-hover-scale overflow-hidden">
-                                                    <a class="color-white"
-                                                        href="4-expert-tips-on-how-to-choose-the-right-mens-wallet.html">
-                                                        <img src="storage/news/15-150x150.jpg"
-                                                            alt="4 Expert Tips On How To Choose The Right Men’s Wallet">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="mb-30 wow fadeInUp animated">
-                                            <div
-                                                class="d-flex bg-white has-border p-25 hover-up transition-normal border-radius-5">
-                                                <div class="post-content media-body">
-                                                    <h6 class="post-title mb-15 text-limit-2-row font-medium"><a
-                                                            href="top-search-engine-optimization-strategies.html">Top
-                                                            Search Engine Optimization Strategies!</a></h6>
-                                                    <div
-                                                        class="entry-meta meta-1 float-left font-x-small text-uppercase">
-                                                        <span class="post-on">Aug 08, 2021</span>
-                                                        <span class="post-by has-dot">2,312 views</span>
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="post-thumb post-thumb-80 d-flex ml-15 border-radius-5 img-hover-scale overflow-hidden">
-                                                    <a class="color-white"
-                                                        href="top-search-engine-optimization-strategies.html">
-                                                        <img src="storage/news/2-150x150.jpg"
-                                                            alt="Top Search Engine Optimization Strategies!">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="mb-30 wow fadeInUp animated">
-                                            <div
-                                                class="d-flex bg-white has-border p-25 hover-up transition-normal border-radius-5">
-                                                <div class="post-content media-body">
-                                                    <h6 class="post-title mb-15 text-limit-2-row font-medium"><a
-                                                            href="10000-web-site-visitors-in-one-monthguaranteed.html">10,000
-                                                            Web Site Visitors In One Month:Guaranteed</a></h6>
-                                                    <div
-                                                        class="entry-meta meta-1 float-left font-x-small text-uppercase">
-                                                        <span class="post-on">Aug 08, 2021</span>
-                                                        <span class="post-by has-dot">2,086 views</span>
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="post-thumb post-thumb-80 d-flex ml-15 border-radius-5 img-hover-scale overflow-hidden">
-                                                    <a class="color-white"
-                                                        href="10000-web-site-visitors-in-one-monthguaranteed.html">
-                                                        <img src="storage/news/13-150x150.jpg"
-                                                            alt="10,000 Web Site Visitors In One Month:Guaranteed">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="mb-30 wow fadeInUp animated">
-                                            <div
-                                                class="d-flex bg-white has-border p-25 hover-up transition-normal border-radius-5">
-                                                <div class="post-content media-body">
-                                                    <h6 class="post-title mb-15 text-limit-2-row font-medium"><a
-                                                            href="simple-ways-to-reduce-your-unwanted-wrinkles.html">Simple
-                                                            Ways To Reduce Your Unwanted Wrinkles!</a></h6>
-                                                    <div
-                                                        class="entry-meta meta-1 float-left font-x-small text-uppercase">
-                                                        <span class="post-on">Aug 08, 2021</span>
-                                                        <span class="post-by has-dot">1,995 views</span>
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="post-thumb post-thumb-80 d-flex ml-15 border-radius-5 img-hover-scale overflow-hidden">
-                                                    <a class="color-white"
-                                                        href="simple-ways-to-reduce-your-unwanted-wrinkles.html">
-                                                        <img src="storage/news/11-150x150.jpg"
-                                                            alt="Simple Ways To Reduce Your Unwanted Wrinkles!">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="sidebar-widget widget_instagram wow fadeInUp animated">
-                                <div class="widget-header-1 position-relative mb-30">
-                                    <h5 class="mt-5 mb-30">Galleries</h5>
-                                </div>
-                                <div class="instagram-gellay">
-                                    <ul class="insta-feed">
-                                        <li>
-                                            <a href="galleries/perfect.html" data-animate="zoomIn" data-duration="1.5s"
-                                                data-delay="0.1s"><img class="border-radius-5"
-                                                    src="storage/galleries/1-150x150.jpg" alt="Perfect"></a>
-                                        </li>
-                                        <li>
-                                            <a href="galleries/new-day.html" data-animate="zoomIn" data-duration="1.5s"
-                                                data-delay="0.1s"><img class="border-radius-5"
-                                                    src="storage/galleries/2-150x150.jpg" alt="New Day"></a>
-                                        </li>
-                                        <li>
-                                            <a href="galleries/happy-day.html" data-animate="zoomIn"
-                                                data-duration="1.5s" data-delay="0.1s"><img class="border-radius-5"
-                                                    src="storage/galleries/3-150x150.jpg" alt="Happy Day"></a>
-                                        </li>
-                                        <li>
-                                            <a href="galleries/nature.html" data-animate="zoomIn" data-duration="1.5s"
-                                                data-delay="0.1s"><img class="border-radius-5"
-                                                    src="storage/galleries/4-150x150.jpg" alt="Nature"></a>
-                                        </li>
-                                        <li>
-                                            <a href="galleries/morning.html" data-animate="zoomIn" data-duration="1.5s"
-                                                data-delay="0.1s"><img class="border-radius-5"
-                                                    src="storage/galleries/5-150x150.jpg" alt="Morning"></a>
-                                        </li>
-                                        <li>
-                                            <a href="galleries/photography.html" data-animate="zoomIn"
-                                                data-duration="1.5s" data-delay="0.1s"><img class="border-radius-5"
-                                                    src="storage/galleries/6-150x150.jpg" alt="Photography"></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                                <div class="col-lg-4 primary-sidebar sticky-sidebar"
+                style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
+                <div class="theiaStickySidebar"
+                    style="padding-top: 0px; padding-bottom: 1px; position: static; transform: none; top: 0px; left: 1156.5px;">
+                    <div class="sidebar-widget widget-about mb-50 pt-30 pr-30 pb-30 pl-30 bg-white border-radius-5 has-border  wow fadeInUp  animated"
+                        style="visibility: visible; animation-name: fadeInUp;">
+                        <img class="about-author-img mb-25" src="storage/general/author.jpg" alt="Hello, I'm Steven">
+                        <h5 class="mb-20">Hello, I'm Steven</h5>
+                        <p class="font-medium text-muted">Hi, I’m Steven, a Florida native, who left my career in
+                            corporate wealth management six years ago to embark on a summer of soul searching that would
+                            change the course of my life forever.</p>
+                        <strong>Follow me: </strong>
+                        <ul class="header-social-network d-inline-block list-inline color-white mb-20">
+                            <li class="list-inline-item"><a style="background: #3b5999" href="https://facebook.com/"
+                                    target="_blank" title="Facebook"><i class="elegant-icon social_facebook"></i></a>
+                            </li>
+                            <li class="list-inline-item"><a style="background: #55ACF9" href="https://twitter.com/"
+                                    target="_blank" title="Twitter"><i class="elegant-icon social_twitter"></i></a></li>
+                            <li class="list-inline-item"><a style="background: #0a66c2" href="https://linkedin.com/"
+                                    target="_blank" title="Linkedin"><i class="elegant-icon social_linkedin"></i></a>
+                            </li>
+                        </ul>
                     </div>
+                    <div class="post-block-list post-module-1">
+                        <ul class="list-post">
+                            <?php
+                                        dynamic_sidebar( 'sidebar-1' );
+                                    ?>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
                 </div>
             </div>
         </div>

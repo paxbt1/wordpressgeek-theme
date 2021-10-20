@@ -2,7 +2,7 @@
     <div class="post-card-1 border-radius-10 hover-up">
         <div class="post-card-1 border-radius-10 hover-up">
             <div class="post-thumb thumb-overlay img-hover-slide position-relative"
-                style="background-image: url(<?php  echo the_post_thumbnail_url($post->ID,'thumbnail'); ?>)">
+                style="background-image: url(<?php   the_post_thumbnail_url($post->ID,'300*300'); ?>)">
                 <a class="img-link" href="<?php the_permalink(); ?>"></a>
                 <ul class="social-share">
                     <li><a href="#"><i class="elegant-icon social_share"></i></a></li>
@@ -30,7 +30,7 @@
                     <div class="entry-meta meta-1 float-left font-x-small text-uppercase">
                         <span class="post-on"><?php the_date(); ?></span>
                         <!-- <span class="time-reading has-dot">12 mins read</span> -->
-                        <span class="post-by has-dot"><?php echo gt_get_post_view(); ?></span>
+                        <span class="float-right" ><?php echo gt_get_post_view(); ?></span>
                     </div>
                 </div>
             </div>
