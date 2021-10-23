@@ -1,6 +1,6 @@
 <?php
 get_header();?>
-<?php gt_set_post_view(); ?>
+
 <?php
 
 if(have_posts()){

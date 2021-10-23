@@ -14,7 +14,7 @@ function wpgeek_register_styles(){
     wp_enqueue_style( 'widgets1', get_template_directory_uri(). "/assets/css/widgets1.css", array(),'1.9.0','all');
     wp_enqueue_style( 'responsive', get_template_directory_uri(). "/assets/css/responsive.css", array(),'1.0','all');
     wp_enqueue_style( 'custom', get_template_directory_uri(). "/assets/css/custom.css", array(),'1.0','all');
-    
+
 
 }
 
@@ -56,40 +56,19 @@ add_theme_support('menus');
 function gt_get_post_view() {
     $count = get_post_meta( get_the_ID(), 'post_views_count', true );
     // return "$count".esc_html_e( "views" ,  'wordpressgeek-net' );
-    return esc_html_e( "بازدید شده" ,  'wordpressgeek-net' ). "$count";
+    return esc_html_e( "Viwed :" ,  'wordpressgeek-net' ). "$count";
 }
 
 
-function gt_set_post_view() {
+function gt_set_post_view($post_id) {
+
     $key = 'post_views_count';
-    $post_id = get_the_ID();
-    $count = (int) get_post_meta( $post_id, $key, true );
+    $count =  get_post_meta( $post_id, $key, true );
     $count++;
     update_post_meta( $post_id, $key, $count );
-}
-
-
-function gt_posts_column_views( $columns ) {
-
-
-    $columns['post_views'] = 'Views';
-
-
-    return $columns;
-
 
 }
 
-
-function gt_posts_custom_column_views( $column ) {
-    if ( $column === 'post_views') {
-        echo gt_get_post_view();
-    }
-}
-
-
-add_filter( 'manage_posts_columns', 'gt_posts_column_views' );
-add_action( 'manage_posts_custom_column', 'gt_posts_custom_column_views' );
 
 
 

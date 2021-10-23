@@ -1,7 +1,9 @@
 <?php
-get_header();?>
-<?php gt_set_post_view(); ?>
-<?php
+get_header();
+if(!current_user_can( 'manage_options' )){
+    gt_set_post_view(get_the_ID());    
+}
+
 
 if(have_posts()){
     while(have_posts(  )){
@@ -10,5 +12,7 @@ if(have_posts()){
 
 }
 }
+
+
 get_footer( );
 
