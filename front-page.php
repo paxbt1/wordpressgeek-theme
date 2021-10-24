@@ -158,7 +158,7 @@ $posts = get_posts($args);
                                                         <div
                                                             class="entry-meta meta-1 float-left font-x-small text-uppercase">
                                                             <span class="post-on"><?php echo get_post_time(get_option( 'date_format' ) , false, $post, true ); ?></span>
-                                                            <!-- <span class="time-reading float-right">12 mins read</span> -->
+                                                            <span class="time-reading float-right"><?php echo get_reading_time(get_the_ID()); ?></span>
                                                             <span class="post-by float-right"><?php echo gt_get_post_view(); ?></span>
                                                         </div>
                                                     </div>

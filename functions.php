@@ -250,3 +250,8 @@ function the_breadcrumb() {
 /*
 * Credit: http://www.thatweblook.co.uk/blog/tutorials/tutorial-wordpress-breadcrumb-function/
 */
+
+
+function get_reading_time($post_id){
+   return _e("Min to Read:","wordpressgeek").ceil(str_word_count(get_post($post_id)->post_content)/250);
+}
