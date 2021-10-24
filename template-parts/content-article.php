@@ -14,7 +14,9 @@
                     <div class="col-md-6">
                         <div class="entry-meta align-items-center meta-2 font-small color-muted">
                             <p class="mb-5">
-                                <span class="author-avatar"><img class="img-circle" src="<?php echo get_avatar_url( get_the_author_ID()); ?>"alt="Steven Madden"></span>
+                                <span class="author-avatar"><img class="img-circle"
+                                        src="<?php echo get_avatar_url( get_the_author_ID()); ?>"
+                                        alt="Steven Madden"></span>
                                 <span class="has-dot"><?php echo get_reading_time(get_the_ID()); ?></span>
                                 <?php echo _e('By','wordpressgeek') ?> <span
                                     class="author-name font-weight-bold"><?php the_author_nickname(); ?></span>
@@ -25,7 +27,8 @@
                     </div>
                     <div class="col-md-6 text-right d-none d-md-inline">
                         <ul class="header-social-network d-inline-block list-inline mr-15">
-                            <li class="list-inline-item text-muted"><span><?php echo _e('Share this: ','wordpressgeek') ?></span></li>
+                            <li class="list-inline-item text-muted">
+                                <span><?php echo _e('Share this: ','wordpressgeek') ?></span></li>
                             <li class="list-inline-item"><a class="social-icon fb text-xs-center" target="_blank"
                                     href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fstories.botble.com%2F20-ways-to-sell-your-product-faster&amp;title=Qui hic est sint. Minima accusantium dolor eius quo. Et soluta culpa id ipsum delectus quia. Rerum aliquid qui eaque et non et. Iure et eum ab vel fugiat iste."><i
                                         class="elegant-icon social_facebook"></i></a></li>
@@ -69,7 +72,8 @@
                 <div class="single-social-share clearfix wow fadeIn  animated"
                     style="visibility: hidden; animation-name: none;">
                     <ul class="header-social-network d-inline-block list-inline float-md-right mt-md-0 mt-4">
-                        <li class="list-inline-item text-muted"><span><?php echo _e('Share this: ','wordpressgeek') ?> </span></li>
+                        <li class="list-inline-item text-muted"><span><?php echo _e('Share this: ','wordpressgeek') ?>
+                            </span></li>
                         <li class="list-inline-item"><a class="social-icon fb text-xs-center" target="_blank"
                                 href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fstories.botble.com%2F20-ways-to-sell-your-product-faster&amp;title=Qui hic est sint. Minima accusantium dolor eius quo. Et soluta culpa id ipsum delectus quia. Rerum aliquid qui eaque et non et. Iure et eum ab vel fugiat iste."><i
                                     class="elegant-icon social_facebook"></i></a></li>
@@ -131,23 +135,27 @@
                 foreach ($posts as $post) :
                  
                 ?>
-                            <article class="hover-up-2 transition-normal wow fadeInUp   animated" style="visibility: hidden; animation-name: none;">
+                            <article class="hover-up-2 transition-normal wow fadeInUp   animated"
+                                style="visibility: hidden; animation-name: none;">
                                 <div class="row mb-40 list-style-2">
                                     <div class="col-md-4">
                                         <div class="post-thumb position-relative border-radius-5">
-                                            <div class="img-hover-slide border-radius-5 position-relative" style="background-image: url(<?php the_post_thumbnail_url('medium'); ?>)">
+                                            <div class="img-hover-slide border-radius-5 position-relative"
+                                                style="background-image: url(<?php the_post_thumbnail_url('medium'); ?>)">
                                                 <a class="img-link" href="<?php the_permalink(); ?>"></a>
                                             </div>
 
-                                         
+
                                         </div>
                                     </div>
 
                                     <div class="col-md-8 align-self-center">
                                         <div class="post-content">
                                             <div class="entry-meta meta-0 font-small mb-10">
-                                                
-                                                <a href="<?php echo get_category_link( get_the_category( get_the_ID())[0]->term_id ); ?>"><span class="post-cat text-success"><?php echo get_the_category(get_the_ID())[0]->name; ?></span></a>
+
+                                                <a
+                                                    href="<?php echo get_category_link( get_the_category( get_the_ID())[0]->term_id ); ?>"><span
+                                                        class="post-cat text-success"><?php echo get_the_category(get_the_ID())[0]->name; ?></span></a>
                                             </div>
                                             <h5 class="post-title font-weight-900 mb-20">
                                                 <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
@@ -155,8 +163,10 @@
                                                         class="elegant-icon icon_star_alt"></i></span>
                                             </h5>
                                             <div class="entry-meta meta-1 float-left font-x-small text-uppercase">
-                                                <span class="post-on"><?php the_modified_date(get_date_template()); ?></span>
-                                                <span class="time-reading has-dot"><?php  echo get_reading_time(get_the_ID()); ?></span>
+                                                <span
+                                                    class="post-on"><?php the_modified_date(get_date_template()); ?></span>
+                                                <span
+                                                    class="time-reading has-dot"><?php  echo get_reading_time(get_the_ID()); ?></span>
                                                 <span class="post-by has-dot"><?php echo gt_get_post_view(); ?></span>
                                             </div>
                                         </div>
@@ -227,9 +237,6 @@
                         echo '</div><!--related-->';
                     }
     ?>
-
-
-                           
                         </ul>
                     </div>
                 </div>
