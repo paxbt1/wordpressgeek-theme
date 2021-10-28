@@ -6,10 +6,10 @@ get_header();
     <div class="container" style="transform: none;">
         <div class="archive-header pt-50">
 
-            <h2 class="font-weight-900">Blog</h2>
+            <h2 class="font-weight-900"><?php echo _e("Blog"."wordpressgeek"); ?></h2>
             <div class="breadcrumb">
-                <a href="index.html">Home</a><span></span>
-                Blog
+                <a href="index.html"><?php echo _e("Home"."wordpressgeek"); ?></a><span></span>
+                <?php echo _e("Blog"."wordpressgeek"); ?>
             </div>
             <div class="bt-1 border-color-1 mt-30 mb-50"></div>
         </div>

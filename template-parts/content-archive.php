@@ -2,7 +2,7 @@
     <div class="post-card-1 border-radius-10 hover-up">
         <div class="post-card-1 border-radius-10 hover-up">
             <div class="post-thumb thumb-overlay img-hover-slide position-relative"
-                style="background-image: url(<?php   the_post_thumbnail_url($post->ID,'300*300'); ?>)">
+                style="background-image: url(<?php   the_post_thumbnail_url($post->ID,'300*300');get_post_format(); ?>)">
                 <a class="img-link" href="<?php the_permalink(); ?>"></a>
                 <ul class="social-share">
                     <li><a href="#"><i class="elegant-icon social_share"></i></a></li>

@@ -58,6 +58,7 @@
     </aside>
 
     <header class="main-header header-style-1 font-heading">
+        
         <div class="header-select-language d-block d-sm-none">
             <div class="container">
                 <div class="language-wrapper d-block d-sm-none">
@@ -72,6 +73,7 @@
                 </div>
             </div>
         </div>
+
         <div class="header-top">
             <div class="container">
                 <div class="row pt-20 pb-20">
@@ -156,9 +158,11 @@
     <div class="container">
         <div class="pt-50 pb-50 ">
             <div class="row mb-20">
+
                 <div class="col-12 align-self-center main-search-form-cover m-auto">
-                    <p class="text-center"><span class="search-text-bg">Search</span></p>
-                    <form action="https://stories.botble.com/search" class="search-header">
+                    <p class="text-center"><span class="search-text-bg"><?php echo _e("Search","wordpressgeek");?></span></p>
+                    <?php get_search_form( ); ?>
+                    <!-- <form action="https://stories.botble.com/search" class="search-header">
                         <div class="input-group w-100">
                             <input type="text" name="q" class="form-control"
                                 placeholder="Search stories, places and people">
@@ -168,8 +172,9 @@
                                 </button>
                             </div>
                         </div>
-                    </form>
+                    </form> -->
                 </div>
+
             </div>
         </div>
     </div>

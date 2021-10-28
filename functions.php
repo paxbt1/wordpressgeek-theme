@@ -255,3 +255,15 @@ function the_breadcrumb() {
 function get_reading_time($post_id){
    return _e("Min to Read:","wordpressgeek").ceil(str_word_count(get_post($post_id)->post_content)/250);
 }
+
+function filter_search_post_type($query) {
+
+    if ( $query->is_search && ! is_admin() && ! empty($_GET['post']) ) {
+            $query->set( 'post_type', array($_GET['post']) );
+        }       
+    
+
+    return $query;
+}
+
+add_filter('pre_get_posts','filter_search_post_type');

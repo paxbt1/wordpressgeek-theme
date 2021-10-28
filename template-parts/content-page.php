@@ -1,5 +1,3 @@
-
-
 <main>
     <div class="container">
         <div class="archive-header pt-50">
